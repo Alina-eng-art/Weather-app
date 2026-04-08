@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* карта */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Rain */
+.rain {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: white;
+  animation: rain 1s linear infinite;
+}
+
+@keyframes rain {
+  0% { transform: translateY(-100px); opacity: 0; }
+  100% { transform: translateY(100vh); opacity: 1; }
+}
+
+/* Snow */
+.snow {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  animation: snow 5s linear infinite;
+}
+
+@keyframes snow {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(100vh); }
+}
