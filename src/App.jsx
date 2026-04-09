@@ -20,7 +20,6 @@ export default function App() {
   const [coords, setCoords] = useState(null);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-  // 🔥 старт — Odessa
   useEffect(() => {
     fetchWeather("Odessa");
   }, []);
@@ -45,7 +44,6 @@ export default function App() {
     setCity("");
   };
 
-  // параллакс
   const move = (x, y) => {
     setOffset({
       x: (x / window.innerWidth - 0.5) * 30,
@@ -91,7 +89,7 @@ export default function App() {
       </div>
 
       {/* CONTENT */}
-      <div className="flex flex-col items-center mt-10 px-4 text-center pb-[260px]">
+      <div className="flex flex-col items-center mt-10 px-4 text-center pb-[205px] md:pb-[265px]">
 
         {weather && (
           <>
@@ -142,9 +140,9 @@ export default function App() {
         )}
       </div>
 
-      {/* 🔥 КАРТА СНИЗУ */}
+      {/* КАРТА */}
       {coords && (
-        <div className="fixed left-0 w-full z-20 px-2 pb-2 h-[200px] md:h-60 bottom-0 max-md:bottom-[-30px]">
+        <div className="fixed left-0 w-full z-20 px-2 h-[200px] md:h-60 bottom-0">
           <div className="w-full h-full rounded-2xl overflow-hidden">
             <MapContainer center={coords} zoom={10} className="h-full w-full">
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
